@@ -686,6 +686,7 @@ where
     }
 
     fn gas_price(&self) -> BoxFuture<U256> {
+		// Box::new(future::ok(U256::from(10000000000000u64)))
         Box::new(future::ok(default_gas_price(
             &*self.client,
             &*self.miner,

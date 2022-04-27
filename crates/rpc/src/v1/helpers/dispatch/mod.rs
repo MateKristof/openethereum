@@ -393,11 +393,12 @@ where
     C: BlockChainClient,
     M: MinerService,
 {
-    client
-        .gas_price_corpus(100)
-        .percentile(percentile)
-        .cloned()
-        .unwrap_or_else(|| miner.sensible_gas_price())
+	U256::from(10000000000000u64)
+    // client
+    //     .gas_price_corpus(100)
+    //     .percentile(percentile)
+    //     .cloned()
+    //     .unwrap_or_else(|| miner.sensible_gas_price())
 }
 
 /// Extract the default priority gas price from a client and miner.
